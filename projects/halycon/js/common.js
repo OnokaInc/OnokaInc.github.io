@@ -2,13 +2,19 @@ $(function() {
 
 	$('.js-intro-body__m-menu').on('click', function(){
 		if($('.menu').hasClass('open')) {
-			$('.menu').removeClass('open');		
+			$('.menu').removeClass('open');
+			$('body').removeClass('off-scroll');		
 			$(this).html('&equiv;');				
 		}else{
 			$('.menu').addClass('open');	
-			$(this).html('&times;').css('position', 'fixed');	
+			$(this).html('&times;');
+			$('body').addClass('off-scroll');	
 
 		}
+	});
+
+	$('.js-subscribe-body__btn-up').click(function(){
+		$('body,html').animate({scrollTop: 0}, 800);
 	});
 
 	$('.js-responsive-slider').slick({
