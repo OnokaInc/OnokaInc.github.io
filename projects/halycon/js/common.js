@@ -1,5 +1,5 @@
 $(function() {
-
+// mobile menu
 	$('.js-intro-body__m-menu').on('click', function(){
 		if($('.menu').hasClass('open')) {
 			$('.menu').removeClass('open');
@@ -12,17 +12,23 @@ $(function() {
 
 		}
 	});
-
+// button to up
 	$('.js-subscribe-body__btn-up').click(function(){
 		$('body,html').animate({scrollTop: 0}, 800);
 	});
-
+// button to skills
+$('.js-problems-body__arrow-down').click(function(){
+	var elementClick = $(this).attr('href');
+	var destination = $(elementClick).offset().top;
+	$('body,html').animate({scrollTop: destination},1000);
+}); 
+// respon siveslider
 	$('.js-responsive-slider').slick({
 		dots: true,
 		infinite: true,
 		speed: 300,
 		autoplay: true,
-		arrow: false,
+		arrows: false,
 		responsive: [
 			{
 				breakpoint: 768,
@@ -32,7 +38,7 @@ $(function() {
 			}
 		]
 	});
-
+// common slider
 	$('.js-slider').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
